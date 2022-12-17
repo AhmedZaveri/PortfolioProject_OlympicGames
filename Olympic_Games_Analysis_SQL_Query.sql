@@ -13,12 +13,7 @@ SELECT
 		 Height,        
 		 Weight,
 		 NOC AS 'Nation Code', -- Explained abbreviation
---       CHARINDEX(' ', Games)-1 AS 'Example 1',
---       CHARINDEX(' ', REVERSE(Games))-1 AS 'Example 2',
---       Games,
 		 LEFT(Games, CHARINDEX(' ', Games) - 1) AS Year, -- Split column to isolate Year, based on space
---       RIGHT(Games,CHARINDEX(' ', REVERSE(Games))-1) AS 'Season', -- Split column to isolate Season, based on space
---       City, -- Commented out as it is not necessary for the analysis
          Sport,
 		 Event,
          CASE WHEN Medal = 'NA' THEN 'Not Registered' ELSE Medal END 
